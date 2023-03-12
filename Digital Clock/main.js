@@ -4,11 +4,17 @@ function updateTime() {
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
-    let day_night = "AM";
-    if (hours > 12) {
-        day_night = "PM";
+    let day = "AM";
+    let night = "PM";
+    if (hours < 12) {
+        day = "AM";
         hours = hours - 12;
     }
+    if (hours > 12) {
+        night = "PM";
+        hours = hours;
+    }
+
     if (seconds < 10) {
         seconds = "0" + seconds;
     }
